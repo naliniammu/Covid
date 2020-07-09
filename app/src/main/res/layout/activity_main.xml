@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:layout_marginBottom="20dp"
+            android:visibility="visible"/>
+
+    <RelativeLayout
+        android:id="@+id/heading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray">
+
+        <TextView
+            android:id="@+id/heading_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center_horizontal"
+            android:text="@string/covid_19_metrics"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/india_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:text="India"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="italic" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/india_text"
+            android:layout_marginTop="@dimen/_20ssp">
+
+            <TextView
+                android:id="@+id/state_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:text="State"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_20sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_toRightOf="@id/state_text"
+                android:background="@drawable/background_curve">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/country_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:padding="@dimen/_3sdp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading_layout"
+        android:layout_margin="@dimen/_20sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtCountryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Active:"/>
+
+                <TextView
+                    android:id="@+id/txtActiveName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10sp"
+                    android:textColor="#000"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/txtConfirmTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtCountryTitle"
+                    android:textColor="#000"
+                    android:text="Total Confirmed:"/>
+
+                <TextView
+                    android:id="@+id/txtConfirmCases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtActiveName"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#000"
+                    android:text=""/>
+
+
+                <TextView
+                    android:id="@+id/txtTotalDeathsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtConfirmTitle"
+                    android:textColor="#000"
+                    android:text="Total Deaths:"/>
+
+                <TextView
+                    android:id="@+id/txtTotalDeaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                  android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtConfirmCases"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#000"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/txtRecoveredTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtTotalDeathsTitle"
+                    android:textColor="#000"
+                    android:text="Total Recovered:"/>
+
+                <TextView
+                    android:id="@+id/txtRecovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                   android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txtTotalDeaths"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#000"
+                    android:text=""/>
+
+            </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/failure_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_30sdp"
+        android:layout_below="@+id/heading_layout"
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/failure_text"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:text="Some failure occured!"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/try_text"
+            android:layout_below="@id/failure_text"
+            android:layout_width="wrap_content"
+            android:text="Try it again"
+            android:background="@drawable/background_curve"
+            android:layout_margin="@dimen/_30sdp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/_20sdp"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/black"
+            android:layout_height="@dimen/_30sdp"/>
+    </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
